@@ -12,32 +12,28 @@ def distance(point1, point2):
 		except: return float('inf')
 	return total
 
-def findKNearest(k, datapoint, dataset):
-	bestnums=[float('inf')]*k
-	bestPoint=dataset.keys()[0]
+def knn(k, datapoint, dataset):
+	best=float('inf')
+	bestPoint=dataset[0]
 	for d in dataset:
-		current=distance(datapoint, dataset[d])
+		current=distance(datapoint, d)
 		if current<best:
 			best=current
-			bestPoint=dataset[d]
-	return 
+			bestPoint=d
+	print bestPoint
+	print datapoint
+	return bestPoint["classification"]
 
 
 
-url = "https://api.microshare.io/share/us.philadelphia.senet.sodaq.fancierfish.decoded"
+url = "https://api.microshare.io/share/this.is.buzz.decoded"
 
 querystring = {"details":"true","page":"","perPage":""}
 
 headers = {
-<<<<<<< HEAD
     'authorization': "Bearer 5e8987b0475ef7b5e433ea360a7daf59d108a37d2338f72f340a18c70a8c74cc",
     # 'cache-control': "no-cache",
     # 'postman-token': "00156731-b784-8fe5-75f3-012afde3cf35"
-=======
-    'Authorization': "Bearer 5326dd877f61485f8f4146aa2d5662693a5c69b503c29d547d0e84cbcbbc3932",
-    'Cache-Control': "no-cache",
-    'Postman-Token': "31bcb656-8b2a-8810-2dbc-2201d0e104b7"
->>>>>>> e17f6a34d151a8ee1eb4739fa9d74ad37a89964a
     }
 
 response = requests.request("GET", url, headers=headers, params=querystring)
@@ -68,14 +64,34 @@ for point in json.loads(response.text)["objs"]:
 
 	except:
 		pass
-
+training=[
+		{'Humidity Sensor': 25.5, 'Temperature Sensor': 2.8, 'Barometer': 1010.3, 'classification': 'heavy'},
+		{'Humidity Sensor': 25.5, 'Temperature Sensor': 5, 'Barometer': 1010.3, 'classification': 'heavy'},
+		{'Humidity Sensor': 25.5, 'Temperature Sensor': 7.7, 'Barometer': 1010.3, 'classification': 'heavy'},
+		{'Humidity Sensor': 25.5, 'Temperature Sensor': 10.8, 'Barometer': 1010.3, 'classification': 'heavy'},
+		{'Humidity Sensor': 25.5, 'Temperature Sensor': -3.3, 'Barometer': 1010.3, 'classification': 'heavy'},
+		{'Humidity Sensor': 25.5, 'Temperature Sensor': 12.8, 'Barometer': 1010.3, 'classification': 'light'},
+		{'Humidity Sensor': 25.5, 'Temperature Sensor': 14.2, 'Barometer': 1010.3, 'classification': 'light'},
+		{'Humidity Sensor': 25.5, 'Temperature Sensor': 17.8, 'Barometer': 1010.3, 'classification': 'light'},
+		{'Humidity Sensor': 25.5, 'Temperature Sensor': 16.3, 'Barometer': 1010.3, 'classification': 'light'},
+		{'Humidity Sensor': 25.5, 'Temperature Sensor': 18.0, 'Barometer': 1010.3, 'classification': 'light'},
+		{'Humidity Sensor': 25.5, 'Temperature Sensor': 19.8, 'Barometer': 1010.3, 'classification': 'none'},
+		{'Humidity Sensor': 25.5, 'Temperature Sensor': 23.0, 'Barometer': 1010.3, 'classification': 'none'},
+		{'Humidity Sensor': 25.5, 'Temperature Sensor': 18.9, 'Barometer': 1010.3, 'classification': 'none'},
+		{'Humidity Sensor': 25.5, 'Temperature Sensor': 20.0, 'Barometer': 1010.3, 'classification': 'none'},
+		{'Humidity Sensor': 25.5, 'Temperature Sensor': 21.8, 'Barometer': 1010.3, 'classification': 'none'}
+	]
 
 
 for i in data.keys():
-	print time.ctime(float(i)), data[str(i)] 
+	pass
+	# print time.ctime(float(i)), data[str(i)] 
 	# for j in data[i]:
 	# 	if j["timeStamp"]>m:
 	# 		m=j["timeStamp"]
 	# print time.ctime(m)
+print knn(0,  data[str(i)], training)
+print ""
+print knn(0, {'Humidity Sensor': 26.5, 'Temperature Sensor': 6.8, 'Barometer': 1010.3, 'classification': 'heavy'}, training)
 
 
