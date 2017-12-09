@@ -1,0 +1,20 @@
+{
+	"samples":[
+		{'Humidity Sensor': 25.5, 'Temperature Sensor': 2.8, 'Barometer': 1010.3, 'classification': 'heavy'},
+		{'Humidity Sensor': 25.5, 'Temperature Sensor': 5, 'Barometer': 1010.3, 'classification': 'heavy'},
+		{'Humidity Sensor': 25.5, 'Temperature Sensor': 7.7, 'Barometer': 1010.3, 'classification': 'heavy'},
+		{'Humidity Sensor': 25.5, 'Temperature Sensor': 10.8, 'Barometer': 1010.3, 'classification': 'heavy'},
+		{'Humidity Sensor': 25.5, 'Temperature Sensor': -3.3, 'Barometer': 1010.3, 'classification': 'heavy'},
+		{'Humidity Sensor': 25.5, 'Temperature Sensor': 12.8, 'Barometer': 1010.3, 'classification': 'light'},
+		{'Humidity Sensor': 25.5, 'Temperature Sensor': 14.2, 'Barometer': 1010.3, 'classification': 'light'},
+		{'Humidity Sensor': 25.5, 'Temperature Sensor': 17.8, 'Barometer': 1010.3, 'classification': 'light'},
+		{'Humidity Sensor': 25.5, 'Temperature Sensor': 16.3, 'Barometer': 1010.3, 'classification': 'light'},
+		{'Humidity Sensor': 25.5, 'Temperature Sensor': 18.0, 'Barometer': 1010.3, 'classification': 'light'},
+		{'Humidity Sensor': 25.5, 'Temperature Sensor': 19.8, 'Barometer': 1010.3, 'classification': 'none'},
+		{'Humidity Sensor': 25.5, 'Temperature Sensor': 23.0, 'Barometer': 1010.3, 'classification': 'none'},
+		{'Humidity Sensor': 25.5, 'Temperature Sensor': 18.9, 'Barometer': 1010.3, 'classification': 'none'},
+		{'Humidity Sensor': 25.5, 'Temperature Sensor': 20.0, 'Barometer': 1010.3, 'classification': 'none'},
+		{'Humidity Sensor': 25.5, 'Temperature Sensor': 21.8, 'Barometer': 1010.3, 'classification': 'none'}
+		
+	]
+}
