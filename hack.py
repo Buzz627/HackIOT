@@ -19,11 +19,11 @@ for point in json.loads(response.text)["objs"]:
 	timeStamp=point['createDate']["$date"]
 	measurement=point["data"]["measure"]
 	measureStr=point["data"]["value"]
-	print dataType
-	for i in point["data"]:
-		print i, point["data"][i]
-	print ""
-	print point['createDate']["$date"]
+	# print dataType
+	# for i in point["data"]:
+	# 	print i, point["data"][i]
+	# print ""
+	# print point['createDate']["$date"]
 	if dataType not in data:
 		data[dataType]=[]
 	data[dataType].append({"timeStamp":timeStamp, "dataType":dataType, 'measurement':measurement, 'measureStr':measureStr})
