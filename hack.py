@@ -20,8 +20,8 @@ def knn(k, datapoint, dataset):
 		if current<best:
 			best=current
 			bestPoint=d
-	# print bestPoint
-	# print datapoint
+	print bestPoint
+	print datapoint
 	print "answer: "
 	return bestPoint["classification"]
 
@@ -92,10 +92,10 @@ for i in data.keys():
 	if int(i)>m:
 		m=int(i)
 
-# print time.ctime(m)
-# print ""
-# print knn(0,  data[str(i)], training)
+print time.ctime(m)
 print ""
-print knn(0, {'Humidity Sensor': 26.5, 'Temperature Sensor': 6.8, 'Barometer': 1010.3, 'classification': 'heavy'}, training)
+print knn(0,  data[str(i)], training)
+print ""
+print knn(0, {u'Humidity Sensor': 26.5,  u'Barometer': 1010.3, u'Temperature Sensor': 1.8,}, training)
 
 
