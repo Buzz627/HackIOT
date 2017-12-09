@@ -20,11 +20,13 @@ def knn(k, datapoint, dataset):
 		if current<best:
 			best=current
 			bestPoint=d
-	print bestPoint
-	print datapoint
+	# print bestPoint
+	# print datapoint
+	print "answer: "
 	return bestPoint["classification"]
 
-
+print "What type of Jacket should I wear?"
+print "Thinking....."
 
 url = "https://api.microshare.io/share/this.is.buzz.decoded"
 
@@ -82,15 +84,17 @@ training=[
 		{'Humidity Sensor': 25.5, 'Temperature Sensor': 21.8, 'Barometer': 1010.3, 'classification': 'none'}
 	]
 
-
+m=0
 for i in data.keys():
-	pass
+	# pass
 	# print time.ctime(float(i)), data[str(i)] 
-	# for j in data[i]:
-	# 	if j["timeStamp"]>m:
-	# 		m=j["timeStamp"]
-	# print time.ctime(m)
-print knn(0,  data[str(i)], training)
+	
+	if int(i)>m:
+		m=int(i)
+
+# print time.ctime(m)
+# print ""
+# print knn(0,  data[str(i)], training)
 print ""
 print knn(0, {'Humidity Sensor': 26.5, 'Temperature Sensor': 6.8, 'Barometer': 1010.3, 'classification': 'heavy'}, training)
 
